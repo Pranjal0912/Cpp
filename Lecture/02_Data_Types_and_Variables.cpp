@@ -14,6 +14,12 @@
 // Example:
 // int age = 22;
 
+/*               
+            +----------+
+            |    22    | ----> age
+            +----------+
+*/
+
 // Meaning:
 // 1. int -> type of the value.
 // 2. age -> variable name.

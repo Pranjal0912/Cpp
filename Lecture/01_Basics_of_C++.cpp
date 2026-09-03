@@ -6,8 +6,7 @@
 //--------------------------------------------------------------------------------------------------
 // 1. SMALLEST USEFUL C++ PROGRAM
 
-// A normal C++ program starts running from main(). The operating system calls main(), the statements
-// inside it run from top to bottom, and then the program ends.
+// A normal C++ program starts running from main(). The operating system calls main(), the statements inside it run from top to bottom, and then the program ends.
 
 // int main()
 // {
@@ -17,7 +16,7 @@
 
 // Meaning of each part:
 // 1. #include <iostream> -> makes input/output tools available.
-// 2. int main() -> main is the starting function; int means it returns an integer status code.
+// 2. int main() -> main is the starting function; 'int' means it returns an integer status code.
 // 3. { } -> curly braces define the block/body of main().
 // 4. std::cout -> prints output to the screen.
 // 5. << -> sends data into cout.
@@ -27,8 +26,7 @@
 //--------------------------------------------------------------------------------------------------
 // 2. HEADER FILES AND #include
 
-// A header file provides declarations for features we want to use. For input/output, we commonly use
-// <iostream>. The #include line is handled by the preprocessor before actual compilation begins.
+// A header file provides declarations for features we want to use. For input/output, we commonly use <iostream>. The #include line is handled by the preprocessor before actual compilation begins.
 
 // Common beginner headers:
 // 1. <iostream>  -> input and output: std::cout, std::cin.
@@ -50,11 +48,11 @@
 // std::cin    -> cin from the std namespace.
 // std::string -> string from the std namespace.
 
-// You may also see this:
-// using namespace std;
-// After writing it, cout can be written instead of std::cout. It is convenient while learning, but in
-// bigger programs it can create naming conflicts. In these notes, std:: is used explicitly so the source
-// of the name is always clear.
+// You may also see this: "using namespace std;"
+// - After writing it, 'cout' can be written instead of 'std::cout'.
+// - It is convenient while learning, but in bigger programs it can create naming conflicts. 
+
+//NOTE:- In these notes, std:: is used explicitly so the source of the name is always clear.
 
 //--------------------------------------------------------------------------------------------------
 // 4. OUTPUT USING std::cout
@@ -75,8 +73,7 @@ void output_examples()
     // 30
 }
 
-// std::cout means character output. The << operator is called the stream insertion operator because
-// it inserts/sends data into the output stream. You can chain multiple << operators in one statement.
+// 'std::cout' means character output. The '<<' operator is called the stream insertion operator because it inserts/sends data into the output stream. You can chain multiple '<<' operators in one statement.
 
 void multiple_output()
 {
@@ -112,8 +109,7 @@ void newline_examples()
 //--------------------------------------------------------------------------------------------------
 // 6. INPUT USING std::cin
 
-// std::cin reads input, usually from the keyboard. The >> operator is called the extraction operator
-// because it extracts data from cin and stores it inside a variable.
+// 'std::cin' reads input, usually from the keyboard. The '>>' operator is called the extraction operator because it extracts data from 'std::cin' and stores it inside a variable.
 
 void input_example()
 {
@@ -160,7 +156,7 @@ void multiple_inputs()
 // 8. COMMENTS
 
 // Comments are notes for humans. The compiler ignores them.
-// Single-line comment: // This is a comment
+// - Single-line comment: '//' This is a comment
 
 /*
     Multi-line comment:
@@ -172,8 +168,8 @@ void multiple_inputs()
 //--------------------------------------------------------------------------------------------------
 // 9. CASE SENSITIVITY AND IDENTIFIERS
 
-// C++ is case-sensitive, so age and Age are different names. cout and Cout are also different.
-// Names we create for variables, functions and other things are called identifiers.
+// - C++ is case-sensitive, so 'age' and 'Age' are different names. 'cout' and 'Cout' are also different.
+// - Names we create for variables, functions and other things are called 'Identifiers'.
 
 // Valid identifiers:
 // 1. age
@@ -203,7 +199,7 @@ void identifier_example()
 // 10. FIRST LOOK AT VARIABLES
 
 // We will study variables deeply in the next topic. For now, a variable is a named storage location.
-// int age = 22; means: create a variable named age, of type int, with initial value 22.
+// int age = 22; means: create a variable named 'age', of type int, with initial value 22.
 
 void tiny_variable_example()
 {
@@ -251,7 +247,8 @@ void expression_example()
 //--------------------------------------------------------------------------------------------------
 // 13. HOW C++ SOURCE CODE BECOMES A PROGRAM
 
-// C++ is compiled, so the source file is not directly executed like a simple script. A rough journey:
+// C++ is compiled, so the source file is not directly executed like a simple script. A rough journey is like this :
+
 // 1. Source code      -> your .cpp file.
 // 2. Preprocessing   -> handles lines like #include.
 // 3. Compilation     -> checks syntax/types and translates code toward machine form.
@@ -259,8 +256,9 @@ void expression_example()
 // 5. Executable      -> final program that the operating system can run.
 
 // Example compile command with g++:
-// g++ Structure_of_Program.cpp -o basics
-// ./basics
+// => "g++ 01_Basics_of_C++.cpp -o basics"
+// => ./basics -> The above command creates an executable named 'basics' which can be run to see the program output.
+
 
 //--------------------------------------------------------------------------------------------------
 // 14. TYPES OF ERRORS
@@ -268,8 +266,7 @@ void expression_example()
 // 1. Compile-time error: program cannot compile. Example: missing semicolon.
 //    std::cout << "Hello"
 
-// 2. Runtime error: program compiles but fails while running. We will see real examples later when
-//    learning arrays, pointers, memory and exceptions.
+// 2. Runtime error: program compiles but fails while running. We will see real examples later when learning arrays, pointers, memory and exceptions.
 
 // 3. Logical error: program compiles and runs, but the answer is wrong.
 //    Example: writing firstNumber - secondNumber when the required operation was addition.
@@ -296,7 +293,7 @@ void expression_example()
 // 16. COMMON BEGINNER MISTAKES
 
 // 1. Writing Cout instead of cout. C++ is case-sensitive.
-// 2. Forgetting std:: before cout/cin when using namespace std; has not been written.
+// 2. Forgetting std:: before cout/cin when 'using namespace std;' has not been written.
 // 3. Missing semicolon after a statement.
 // 4. Writing std::cin << age; instead of std::cin >> age;
 // 5. Writing std::cout >> age; instead of std::cout << age;
@@ -319,8 +316,7 @@ void expression_example()
 // '\n'                -> newline character.
 // return 0;           -> successful completion of main().
 
-// Golden beginner rule: understand the purpose of each piece first; memorization becomes easier after
-// you have written and run a few small programs.
+// -> Golden beginner rule: Understand the purpose of each piece first, memorization becomes easier after you have written and run a few small programs.
 
 //--------------------------------------------------------------------------------------------------
 // MAIN DRIVER FOR THESE NOTES
