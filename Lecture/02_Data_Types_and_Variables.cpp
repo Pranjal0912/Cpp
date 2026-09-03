@@ -1,20 +1,20 @@
 // C++ BASICS / 02_data_types_and_variables
 
 
-#include <iomanip>
-#include <iostream>
-#include <string>
+#include <iomanip> // Gives access to std::setprecision() for controlling floating-point output precision.
+#include <iostream> // Gives access to std::cout, std::cin, std::endl and other input/output tools. 
+#include <string> // Gives access to std::string for storing text. This is part of the Standard Library, not a core built-in type.
 
 //--------------------------------------------------------------------------------------------------
 // 1. WHY THIS TOPIC MATTERS
 
-// A variable is a named storage location used to hold a value.
-// A data type tells C++ what kind of value is stored and how that value should be interpreted.
+// - A variable is a named storage location used to hold a value.
+// - A data type tells C++ what kind of value is stored and how that value should be interpreted.
 
 // Example:
 // int age = 22;
 
-/*               
+/*               INT
             +----------+
             |    22    | ----> age
             +----------+
@@ -25,8 +25,8 @@
 // 2. age -> variable name.
 // 3. 22  -> value stored in the variable.
 
-// C++ is statically typed, which means the compiler knows the type of each variable before the program
-// runs. That type controls memory size, allowed operations, conversions and expression behavior.
+// - C++ is statically typed, which means the compiler knows the 'type' of each variable before the program runs.
+// - That type controls memory size, allowed operations, conversions and expression behavior.
 
 //--------------------------------------------------------------------------------------------------
 // 2. DECLARATION, INITIALIZATION AND ASSIGNMENT
@@ -55,17 +55,19 @@ void declaration_initialization_assignment()
 // Important rule: initialize variables whenever practical.
 // Prefer int count = 0; or int count{}; instead of leaving a local built-in variable uninitialized.
 
+
+// In python int, float, str, bool are immutable types. But in C++, int, float, double, char, bool are built-in types and mutable. std::string, std::vector are mutable types from the Standard Library.
 //--------------------------------------------------------------------------------------------------
 // 3. BASIC TYPES USED MOST OFTEN
 
 // Common beginner types:
-// 1. int         -> ordinary whole numbers.
-// 2. long long   -> larger whole numbers.
-// 3. float       -> lower-precision decimal numbers.
-// 4. double      -> higher-precision decimal numbers.
-// 5. char        -> one character.
-// 6. bool        -> true or false.
-// 7. std::string -> text; this comes from the Standard Library, not from the core built-in types.
+// 1. int         -> ordinary whole numbers. => 4 bytes on most systems.
+// 2. long long   -> larger whole numbers. => 8 bytes on most systems.
+// 3. float       -> lower-precision decimal numbers. => 4 bytes on most systems.
+// 4. double      -> higher-precision decimal numbers. => 8 bytes on most systems.
+// 5. char        -> one character. => 1 byte on most systems.
+// 6. bool        -> true or false. => 1 byte on most systems.
+// 7. std::string -> text; this comes from the Standard Library, not from the core built-in types. 
 
 void basic_type_examples()
 {
