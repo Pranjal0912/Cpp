@@ -13,10 +13,10 @@
 // 10 + 5
 
 // Meaning:
-// 1. 10 and 5 are operands.
-// 2. + is the operator.
-// 3. 10 + 5 is an expression.
-// 4. The expression produces the value 15.
+// 1. '10' and '5' are operands.
+// 2. '+' is the operator.
+// 3. '10 + 5' is an expression.
+// 4. The expression produces the value '15'.
 
 //--------------------------------------------------------------------------------------------------
 // 2. EXPRESSION
@@ -24,11 +24,11 @@
 // An expression is anything that produces a value.
 
 // Examples:
-// 1. 10
-// 2. 10 + 20
-// 3. a * b
-// 4. age >= 18
-// 5. x == y
+// 1. '10'
+// 2. '10 + 20'
+// 3. 'a * b'
+// 4. 'age >= 18'
+// 5. 'x == y'
 
 // The result of an expression depends on the operators, operands, operand types, precedence and grouping.
 
@@ -49,7 +49,7 @@ void arithmetic_examples()
     int a = 10;
     int b = 3;
 
-    std::cout << "a + b = " << a + b << '\n';
+    std::cout << "a + b = " << a + b << '\n'; 
     std::cout << "a - b = " << a - b << '\n';
     std::cout << "a * b = " << a * b << '\n';
     std::cout << "a / b = " << a / b << '\n';
@@ -63,9 +63,9 @@ void division_examples()
 {
     std::cout << "\nINTEGER VS FLOATING-POINT DIVISION\n";
 
-    std::cout << "10 / 3 = " << 10 / 3 << '\n';
-    std::cout << "10.0 / 3 = " << 10.0 / 3 << '\n';
-    std::cout << "10 / 3.0 = " << 10 / 3.0 << '\n';
+    std::cout << "10 / 3 = " << 10 / 3 << '\n'; // Output: 10 / 3 = 3
+    std::cout << "10.0 / 3 = " << 10.0 / 3 << '\n'; // Output: 10.0 / 3 = 3.33333
+    std::cout << "10 / 3.0 = " << 10 / 3.0 << '\n'; // Output: 10 / 3.0 = 3.33333
 }
 
 // % gives the remainder after integer division.
@@ -77,19 +77,19 @@ void modulo_examples()
 
     int number = 14;
 
-    std::cout << "10 % 3 = " << 10 % 3 << '\n';
-    std::cout << "8 % 2 = " << 8 % 2 << '\n';
-    std::cout << "7 % 2 = " << 7 % 2 << '\n';
+    std::cout << "10 % 3 = " << 10 % 3 << '\n'; // Output: 10 % 3 = 1
+    std::cout << "8 % 2 = " << 8 % 2 << '\n'; // Output: 8 % 2 = 0
+    std::cout << "7 % 2 = " << 7 % 2 << '\n'; // Output: 7 % 2 = 1
 
     std::cout << std::boolalpha;
-    std::cout << "Is 14 even? " << (number % 2 == 0) << '\n';
+    std::cout << "Is 14 even? " << (number % 2 == 0) << '\n'; // Output: Is 14 even? true
     std::cout << std::noboolalpha;
 }
 
 //--------------------------------------------------------------------------------------------------
 // 4. ASSIGNMENT AND COMPOUND ASSIGNMENT
 
-// = means assignment, not equality.
+// '=' means assignment, not equality.
 // x = 20; means store 20 inside x.
 
 void assignment_examples()
@@ -116,19 +116,19 @@ void compound_assignment_examples()
     int x = 10;
 
     x += 5;
-    std::cout << "x += 5 -> " << x << '\n';
+    std::cout << "x += 5 -> " << x << '\n'; // Output: x += 5 -> 15
 
     x -= 3;
-    std::cout << "x -= 3 -> " << x << '\n';
+    std::cout << "x -= 3 -> " << x << '\n'; // Output: x -= 3 -> 12
 
     x *= 2;
-    std::cout << "x *= 2 -> " << x << '\n';
+    std::cout << "x *= 2 -> " << x << '\n'; // Output: x *= 2 -> 24
 
     x /= 4;
-    std::cout << "x /= 4 -> " << x << '\n';
+    std::cout << "x /= 4 -> " << x << '\n'; // Output: x /= 4 -> 6
 
     x %= 4;
-    std::cout << "x %= 4 -> " << x << '\n';
+    std::cout << "x %= 4 -> " << x << '\n'; // Output: x %= 4 -> 2
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -150,8 +150,8 @@ void increment_decrement_examples()
 }
 
 // Prefix vs postfix matters when the expression's value is used.
-// x++ uses the old value first, then increments.
-// ++x increments first, then uses the new value.
+// - x++ uses the old value first, then increments.
+// - ++x increments first, then uses the new value.
 
 void prefix_postfix_examples()
 {
@@ -160,12 +160,12 @@ void prefix_postfix_examples()
     int x = 5;
     int postfixResult = x++;
 
-    std::cout << "After postfix: x = " << x << ", result = " << postfixResult << '\n';
+    std::cout << "After postfix: x = " << x << ", result = " << postfixResult << '\n'; // Output: After postfix: x = 6, result = 5
 
     int y = 5;
     int prefixResult = ++y;
 
-    std::cout << "After prefix: y = " << y << ", result = " << prefixResult << '\n';
+    std::cout << "After prefix: y = " << y << ", result = " << prefixResult << '\n'; // Output: After prefix: y = 6, result = 6
 }
 
 // Beginner rule: avoid complicated expressions like x++ + ++x. Split side effects into clear statements.
@@ -191,12 +191,12 @@ void comparison_examples()
     int b = 20;
 
     std::cout << std::boolalpha;
-    std::cout << "a == b -> " << (a == b) << '\n';
-    std::cout << "a != b -> " << (a != b) << '\n';
-    std::cout << "a > b  -> " << (a > b) << '\n';
-    std::cout << "a < b  -> " << (a < b) << '\n';
-    std::cout << "a >= b -> " << (a >= b) << '\n';
-    std::cout << "a <= b -> " << (a <= b) << '\n';
+    std::cout << "a == b -> " << (a == b) << '\n'; // Output: False
+    std::cout << "a != b -> " << (a != b) << '\n'; // Output: True
+    std::cout << "a > b  -> " << (a > b) << '\n'; // Output: False
+    std::cout << "a < b  -> " << (a < b) << '\n'; // Output: True
+    std::cout << "a >= b -> " << (a >= b) << '\n'; // Output: False
+    std::cout << "a <= b -> " << (a <= b) << '\n'; // Output: True
     std::cout << std::noboolalpha;
 }
 
@@ -211,7 +211,7 @@ void comparison_result_examples()
     bool result = 10 > 5;
 
     std::cout << std::boolalpha;
-    std::cout << "10 > 5 -> " << result << '\n';
+    std::cout << "10 > 5 -> " << result << '\n'; // Output: True
     std::cout << std::noboolalpha;
 }
 
@@ -239,10 +239,10 @@ void logical_examples()
     bool dayOff = isWeekend || isHoliday;
 
     std::cout << std::boolalpha;
-    std::cout << "Can drive? " << canDrive << '\n';
-    std::cout << "Day off? " << dayOff << '\n';
-    std::cout << "Logged in? " << isLoggedIn << '\n';
-    std::cout << "Not logged in? " << !isLoggedIn << '\n';
+    std::cout << "Can drive? " << canDrive << '\n'; // Output: True 
+    std::cout << "Day off? " << dayOff << '\n'; // Output: True
+    std::cout << "Logged in? " << isLoggedIn << '\n'; // Output: False
+    std::cout << "Not logged in? " << !isLoggedIn << '\n'; // Output: True
     std::cout << std::noboolalpha;
 }
 
@@ -254,7 +254,7 @@ void combined_boolean_examples()
     bool validAge = age >= 18 && age <= 60;
 
     std::cout << std::boolalpha;
-    std::cout << "age >= 18 && age <= 60 -> " << validAge << '\n';
+    std::cout << "age >= 18 && age <= 60 -> " << validAge << '\n'; // Output: True
     std::cout << std::noboolalpha;
 }
 
@@ -357,13 +357,13 @@ void unary_binary_ternary_examples()
     int b = 20;
     int age = 20;
 
-    const char* category = age >= 18 ? "Adult" : "Minor";
+    const char* category = age >= 18    ? "Adult" : "Minor";
     int maximum = a > b ? a : b;
 
-    std::cout << "-x = " << -x << '\n';
-    std::cout << "a + b = " << a + b << '\n';
-    std::cout << "age >= 18 ? Adult : Minor -> " << category << '\n';
-    std::cout << "max of a and b = " << maximum << '\n';
+    std::cout << "-x = " << -x << '\n'; // Output: -x = -5
+    std::cout << "a + b = " << a + b << '\n';  // Output: a + b = 30
+    std::cout << "age >= 18 ? Adult : Minor -> " << category << '\n'; // Output: age >= 18 ? Adult : Minor -> Adult
+    std::cout << "max of a and b = " << maximum << '\n'; // Output: max of a and b = 20
 }
 
 // Use ternary for small, simple selections. Avoid nested ternary expressions that become hard to read.
@@ -391,16 +391,16 @@ void bitwise_examples()
     int a = 5; // 0101 in a small 4-bit mental model.
     int b = 3; // 0011 in a small 4-bit mental model.
 
-    std::cout << "5 & 3 = " << (a & b) << '\n';  // 0001 -> 1
-    std::cout << "5 | 3 = " << (a | b) << '\n';  // 0111 -> 7
-    std::cout << "5 ^ 3 = " << (a ^ b) << '\n';  // 0110 -> 6
-    std::cout << "5 << 1 = " << (a << 1) << '\n';
-    std::cout << "8 >> 1 = " << (8 >> 1) << '\n';
+    std::cout << "5 & 3 = " << (a & b) << '\n';  // Output: 5 & 3 = 1 => 0101 & 0011 = 0001
+    std::cout << "5 | 3 = " << (a | b) << '\n';  // Output: 5 | 3 = 7 => 0101 | 0011 = 0111
+    std::cout << "5 ^ 3 = " << (a ^ b) << '\n';  // Output: 5 ^ 3 = 6 => 0101 ^ 0011 = 0110
+    std::cout << "5 << 1 = " << (a << 1) << '\n';  // Output: 5 << 1 = 10 => 0101 << 1 = 1010
+    std::cout << "8 >> 1 = " << (8 >> 1) << '\n';  // Output: 8 >> 1 = 4 => 1000 >> 1 = 0100
 }
 
 // Shift intuition for suitable non-negative integers:
-// 1. x << 1 often behaves like x * 2.
-// 2. x >> 1 often behaves like x / 2.
+// 1. x << n often behaves like x * 2^n.
+// 2. x >> n often behaves like x / 2^n.
 // Do not blindly replace multiplication/division with shifts; signedness and overflow rules matter.
 
 // Precedence trap in bit manipulation:
@@ -424,8 +424,8 @@ void expression_type_examples()
     double trap = a / b;
     auto mixedResult = a + c;
 
-    std::cout << "double trap = a / b -> " << trap << '\n';
-    std::cout << "a + c where c is double -> " << mixedResult << '\n';
+    std::cout << "double trap = a / b -> " << trap << '\n'; // Output: double trap = a / b -> 2.0
+    std::cout << "a + c where c is double -> " << mixedResult << '\n'; // Output: a + c where c is double -> 7.0
 }
 
 // The destination type does not magically change how an expression was evaluated.
@@ -446,7 +446,8 @@ void overflow_expression_examples()
 
     long long safeResult = 1LL * a * b;
 
-    std::cout << "1LL * a * b = " << safeResult << '\n';
+    std::cout <<"Unsafe a * b = " << a * b << '\n'; // Output: Unsafe a * b = -727379968 (overflow)
+    std::cout << "1LL * a * b = " << safeResult << '\n'; // Output: 1LL * a * b = 10000000000 (safe)
 }
 
 // DSA pattern to remember: use 1LL * a * b when large multiplication is possible.
@@ -468,7 +469,7 @@ void overflow_expression_examples()
 //--------------------------------------------------------------------------------------------------
 // 16. FLOATING-POINT COMPARISON WARNING
 
-// == is straightforward for integers.
+// '==' is straightforward for integers.
 // Floating-point equality needs more care because values like 0.1 + 0.2 may not be represented exactly.
 
 void floating_comparison_warning()
@@ -478,7 +479,7 @@ void floating_comparison_warning()
     double value = 0.1 + 0.2;
 
     std::cout << std::boolalpha;
-    std::cout << "0.1 + 0.2 == 0.3 -> " << (value == 0.3) << '\n';
+    std::cout << "0.1 + 0.2 == 0.3 -> " << (value == 0.3) << '\n'; // Output: 0.1 + 0.2 == 0.3 -> false
     std::cout << std::noboolalpha;
 }
 

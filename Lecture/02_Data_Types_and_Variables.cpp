@@ -1,6 +1,5 @@
 // C++ BASICS / 02_data_types_and_variables
 
-
 #include <iomanip> // Gives access to std::setprecision() for controlling floating-point output precision.
 #include <iostream> // Gives access to std::cout, std::cin, std::endl and other input/output tools. 
 #include <string> // Gives access to std::string for storing text. This is part of the Standard Library, not a core built-in type.
@@ -93,8 +92,7 @@ void basic_type_examples()
 //--------------------------------------------------------------------------------------------------
 // 4. INTEGER TYPES
 
-// Integer types store whole numbers. C++ gives multiple integer types because different programs need
-// different ranges and memory tradeoffs.
+// Integer types store whole numbers. C++ gives multiple integer types because different programs need different ranges and memory tradeoffs.
 
 // Common integer types:
 // 1. short      -> usually smaller range.
@@ -113,10 +111,10 @@ void integer_examples()
     long largeNumber = 1000000L;
     long long veryLargeNumber = 10'000'000'000LL;
 
-    std::cout << "short = " << smallNumber << '\n';
-    std::cout << "int = " << normalNumber << '\n';
-    std::cout << "long = " << largeNumber << '\n';
-    std::cout << "long long = " << veryLargeNumber << '\n';
+    std::cout << "short = " << smallNumber << '\n'; // -> Output: short = 100
+    std::cout << "int = " << normalNumber << '\n'; // -> Output: int = 100000
+    std::cout << "long = " << largeNumber << '\n'; // -> Output: long = 1000000
+    std::cout << "long long = " << veryLargeNumber << '\n'; // -> Output: long long = 10000000000
 }
 
 // signed means negative, zero and positive values are allowed. Normal int is signed by default.
@@ -147,16 +145,16 @@ void floating_point_examples()
     float floatValue = 3.14f;
     double doubleValue = 3.141592653589793;
 
-    std::cout << "float = " << floatValue << '\n';
-    std::cout << "double = " << doubleValue << '\n';
+    std::cout << "float = " << floatValue << '\n';  // -> Output: float = 3.14
+    std::cout << "double = " << doubleValue << '\n'; // -> Output: double = 3.14159
 
-    std::cout << std::setprecision(17);
-    std::cout << "0.1 + 0.2 as double = " << 0.1 + 0.2 << '\n';
-    std::cout << std::setprecision(6);
+    std::cout << std::setprecision(17); // what std::setprecision(17) does is it sets the precision of floating-point output to 17 digits. It doesn't print anything on the console by itself. 
+    std::cout << "0.1 + 0.2 as double = " << 0.1 + 0.2 << '\n'; // -> Output: 0.1 + 0.2 as double = 0.30000000000000004
+    std::cout << std::setprecision(6); // Reset precision to default for future output.
 }
 
-// Practical rule: prefer double for ordinary decimal calculations unless there is a specific reason to
-// use float. Also remember that floating-point values are approximations, not perfect decimal storage.
+// - Practical rule: prefer double for ordinary decimal calculations unless there is a specific reason to use float. 
+// - Also remember that floating-point values are approximations, not perfect decimal storage.
 
 //--------------------------------------------------------------------------------------------------
 // 6. char AND std::string
@@ -186,10 +184,12 @@ void char_numeric_examples()
     char letter = 'A';
     char nextLetter = letter + 1;
 
-    std::cout << "Character = " << letter << '\n';
-    std::cout << "Numeric code = " << static_cast<int>(letter) << '\n';
-    std::cout << "Next character code gives = " << nextLetter << '\n';
+    std::cout << "Character = " << letter << '\n'; // -> Output: Character = A
+    std::cout << "Numeric code = " << static_cast<int>(letter) << '\n'; // -> Output: Numeric code = 65
+    std::cout << "Next character code gives = " << nextLetter << '\n'; // -> Output: Next character code gives = B
 }
+
+// -> "static_cast<int>(letter)" converts the char to its integer code for display. It is just like 'Type Casting' in Python, but in C++ it is done using static_cast<type>(value).
 
 //--------------------------------------------------------------------------------------------------
 // 7. bool AND boolalpha
@@ -204,13 +204,14 @@ void bool_examples()
     bool isReady = true;
     bool isGameOver = false;
 
-    std::cout << "Default true = " << isReady << '\n';
-    std::cout << "Default false = " << isGameOver << '\n';
+    // -> By default, std::cout prints bool values as 1 (true) or 0 (false).
+    std::cout << "Default true = " << isReady << '\n'; // -> Output: Default true = 1
+    std::cout << "Default false = " << isGameOver << '\n'; // -> Output: Default false = 0
 
-    std::cout << std::boolalpha;
-    std::cout << "With boolalpha true = " << isReady << '\n';
-    std::cout << "With boolalpha false = " << isGameOver << '\n';
-    std::cout << std::noboolalpha;
+    std::cout << std::boolalpha; // -> This line sets the output stream to print bool values as "true" or "false" instead of 1 or 0.
+    std::cout << "With boolalpha true = " << isReady << '\n'; // -> Output: With boolalpha true = true
+    std::cout << "With boolalpha false = " << isGameOver << '\n'; // -> Output: With boolalpha false = false
+    std::cout << std::noboolalpha; // -> This line resets the output stream to print bool values as 1 or 0 again.
 }
 
 // Numeric values converted to bool:
@@ -226,9 +227,9 @@ void number_to_bool_examples()
     bool c = -5;
 
     std::cout << std::boolalpha;
-    std::cout << "bool a = 0  -> " << a << '\n';
-    std::cout << "bool b = 10 -> " << b << '\n';
-    std::cout << "bool c = -5 -> " << c << '\n';
+    std::cout << "bool a = 0  -> " << a << '\n'; // -> Output: bool a = 0  -> false
+    std::cout << "bool b = 10 -> " << b << '\n'; // -> Output: bool b = 10 -> true
+    std::cout << "bool c = -5 -> " << c << '\n'; // -> Output: bool c = -5 -> true
     std::cout << std::noboolalpha;
 }
 
@@ -242,20 +243,20 @@ void sizeof_examples()
 {
     std::cout << "\nsizeof() EXAMPLES\n";
 
-    std::cout << "sizeof(char) = " << sizeof(char) << '\n';
-    std::cout << "sizeof(short) = " << sizeof(short) << '\n';
-    std::cout << "sizeof(int) = " << sizeof(int) << '\n';
-    std::cout << "sizeof(long) = " << sizeof(long) << '\n';
-    std::cout << "sizeof(long long) = " << sizeof(long long) << '\n';
-    std::cout << "sizeof(float) = " << sizeof(float) << '\n';
-    std::cout << "sizeof(double) = " << sizeof(double) << '\n';
-    std::cout << "sizeof(bool) = " << sizeof(bool) << '\n';
+    std::cout << "sizeof(char) = " << sizeof(char) << '\n'; // -> Output: sizeof(char) = 1
+    std::cout << "sizeof(short) = " << sizeof(short) << '\n'; // -> Output: sizeof(short) = 2
+    std::cout << "sizeof(int) = " << sizeof(int) << '\n'; // -> Output: sizeof(int) = 4
+    std::cout << "sizeof(long) = " << sizeof(long) << '\n'; // -> Output: sizeof(long) = 8
+    std::cout << "sizeof(long long) = " << sizeof(long long) << '\n'; // -> Output: sizeof(long long) = 8
+    std::cout << "sizeof(float) = " << sizeof(float) << '\n'; // -> Output: sizeof(float) = 4
+    std::cout << "sizeof(double) = " << sizeof(double) << '\n'; // -> Output: sizeof(double) = 8
+    std::cout << "sizeof(bool) = " << sizeof(bool) << '\n'; // -> Output: sizeof(bool) = 1
 
     int age = 22;
     double price = 99.99;
 
-    std::cout << "sizeof(age) = " << sizeof(age) << '\n';
-    std::cout << "sizeof(price) = " << sizeof(price) << '\n';
+    std::cout << "sizeof(age) = " << sizeof(age) << '\n'; // -> Output: sizeof(age) = 4
+    std::cout << "sizeof(price) = " << sizeof(price) << '\n'; // -> Output: sizeof(price) = 8
 }
 
 // Important: sizeof(char) is always 1 in C++, but the exact byte/bit discussion comes later.
@@ -287,12 +288,12 @@ void literal_examples()
     char grade = 'A';
     std::string message = "Learning C++";
 
-    std::cout << count << '\n';
-    std::cout << bigCount << '\n';
-    std::cout << rate << '\n';
-    std::cout << price << '\n';
-    std::cout << grade << '\n';
-    std::cout << message << '\n';
+    std::cout << count << '\n'; // -> Output: 10
+    std::cout << bigCount << '\n'; // -> Output: 10000000000
+    std::cout << rate << '\n'; // -> Output: 2.5
+    std::cout << price << '\n'; // -> Output: 99.99
+    std::cout << grade << '\n'; // -> Output: A
+    std::cout << message << '\n'; // -> Output: Learning C++
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -308,12 +309,12 @@ void auto_examples()
     auto age = 22;           // int
     auto height = 176.5;     // double
     auto grade = 'A';        // char
-    auto name = std::string("Pranjal");
+    auto name = std::string("Pranjal"); 
 
-    std::cout << age << '\n';
-    std::cout << height << '\n';
-    std::cout << grade << '\n';
-    std::cout << name << '\n';
+    std::cout << age << '\n'; // -> Output: 22
+    std::cout << height << '\n'; // -> Output: 176.5
+    std::cout << grade << '\n'; // -> Output: A
+    std::cout << name << '\n'; // -> Output: Pranjal
 }
 
 // Beginner rule: use explicit types while learning. Use auto later when the type is obvious or too long.
@@ -321,8 +322,8 @@ void auto_examples()
 //--------------------------------------------------------------------------------------------------
 // 11. const
 
-// const means the variable cannot be changed after initialization.
-// A const variable must be initialized when it is created.
+// - 'const' means the variable cannot be changed after initialization. 
+// - A const variable must be initialized when it is created.
 
 void const_examples()
 {
@@ -342,29 +343,30 @@ void const_examples()
 //--------------------------------------------------------------------------------------------------
 // 12. IMPLICIT AND EXPLICIT CONVERSION
 
-// Implicit conversion means C++ converts automatically.
-// Explicit conversion means the programmer clearly requests the conversion.
+// - Implicit conversion means C++ converts automatically.
+// - Explicit conversion means the programmer clearly requests the conversion.
 
 void conversion_examples()
 {
     std::cout << "\nCONVERSION EXAMPLES\n";
 
+    // Implicit conversion example:
     int integerValue = 10;
     double decimalValue = integerValue; // int -> double happens implicitly.
+    std::cout << integerValue << " (int) converted to double = " << decimalValue << '\n'; // -> Output: 10 (int) converted to double = 10
 
+    // Explicit conversion example:
     double marks = 91.75;
     int wholeMarks = static_cast<int>(marks); // explicit conversion; fractional part is discarded.
+    std::cout << marks << " (double) converted to int = " << wholeMarks << '\n'; // -> Output: 91.75 (double) converted to int = 91
 
     char letter = 'B';
-    int letterCode = static_cast<int>(letter);
+    int letterCode = static_cast<int>(letter);  // -> This is an explicit conversion from char to int, giving the ASCII code of 'B'.
+    std::cout << "char '" << letter << "' converted to int = " << letterCode << '\n'; // -> Output: char 'B' converted to int = 66
 
     int code = 67;
     char convertedLetter = static_cast<char>(code);
-
-    std::cout << "int to double: " << decimalValue << '\n';
-    std::cout << "double to int: " << wholeMarks << '\n';
-    std::cout << "char to int: " << letter << " -> " << letterCode << '\n';
-    std::cout << "int to char: " << code << " -> " << convertedLetter << '\n';
+    std::cout << "int " << code << " converted to char = '" << convertedLetter << "'\n"; // -> Output: int 67 converted to char = 'C'
 }
 
 // static_cast<T>(value) is the modern C++ style for many ordinary intentional conversions.
@@ -383,8 +385,8 @@ void narrowing_examples()
     double preciseValue = 5.9;
     int narrowedValue = static_cast<int>(preciseValue);
 
-    std::cout << "Original double = " << preciseValue << '\n';
-    std::cout << "After static_cast<int> = " << narrowedValue << '\n';
+    std::cout << "Original double = " << preciseValue << '\n'; // -> Output: Original double = 5.9
+    std::cout << "After static_cast<int> = " << narrowedValue << '\n'; // -> Output: After conversion to int = 5
 }
 
 // Brace initialization can help catch some narrowing conversions:
@@ -401,16 +403,16 @@ void division_examples()
 {
     std::cout << "\nDIVISION EXAMPLES\n";
 
-    std::cout << "5 / 2 = " << 5 / 2 << '\n';
-    std::cout << "5.0 / 2 = " << 5.0 / 2 << '\n';
-    std::cout << "5 / 2.0 = " << 5 / 2.0 << '\n';
-    std::cout << "static_cast<double>(5) / 2 = " << static_cast<double>(5) / 2 << '\n';
+    std::cout << "5 / 2 = " << 5 / 2 << '\n'; // -> Output: 5 / 2 = 2
+    std::cout << "5.0 / 2 = " << 5.0 / 2 << '\n'; // -> Output: 5.0 / 2 = 2.5
+    std::cout << "5 / 2.0 = " << 5 / 2.0 << '\n'; // -> Output: 5 / 2.0 = 2.5
+    std::cout << "static_cast<double>(5) / 2 = " << static_cast<double>(5) / 2 << '\n'; // -> Output: static_cast<double>(5) / 2 = 2.5  
 
     double trap = 5 / 2;
     double stillTrap = static_cast<double>(5 / 2);
 
-    std::cout << "double trap = 5 / 2 -> " << trap << '\n';
-    std::cout << "static_cast<double>(5 / 2) -> " << stillTrap << '\n';
+    std::cout << "double trap = 5 / 2 -> " << trap << '\n'; // -> Output: double trap = 5 / 2 -> 2
+    std::cout << "static_cast<double>(5 / 2) -> " << stillTrap << '\n'; // -> Output: static_cast<double>(5 / 2) -> 2
 }
 
 // Important: the right-hand expression is evaluated before assignment.
@@ -420,8 +422,7 @@ void division_examples()
 //--------------------------------------------------------------------------------------------------
 // 15. TYPE OF AN EXPRESSION MATTERS
 
-// When you see a + b, a / b, a * b, do not only ask where the result is stored.
-// Ask what type the operands are, because expression evaluation depends on operand types.
+// When you see a + b, a / b, a * b, do not only ask where the result is stored but also ask what 'type' the operands are, because expression evaluation depends on operand types.
 
 void expression_type_examples()
 {
@@ -431,10 +432,10 @@ void expression_type_examples()
     int b = 2;
 
     double wrongResult = a / b;
-    double correctResult = static_cast<double>(a) / b;
+    double correctResult = static_cast<double>(a) / b; 
 
-    std::cout << "double wrongResult = a / b -> " << wrongResult << '\n';
-    std::cout << "static_cast<double>(a) / b -> " << correctResult << '\n';
+    std::cout << "double wrongResult = a / b -> " << wrongResult << '\n'; // Output: 2
+    std::cout << "static_cast<double>(a) / b -> " << correctResult << '\n'; // Output: 2.5 because a is converted to double before division.
 }
 
 // This habit is extremely useful in DSA: always ask, "In what type is this expression being calculated?"
@@ -452,14 +453,17 @@ void overflow_awareness_examples()
     int a = 100000;
     int b = 100000;
 
-    long long safeProduct = 1LL * a * b;
+    long long safeProduct = 1LL * a * b; 
+    // But what if we had written: long long result = a * b; ? Then a * b would be calculated as int first, which overflows, and then converted to long long. 
+    long long result = a * b; // This is wrong because a * b is calculated as int first, which overflows.
 
-    std::cout << "1LL * a * b = " << safeProduct << '\n';
+    std::cout << "1LL * a * b = " << safeProduct << '\n'; // Output: 1LL * a * b = 10000000000 (correct value)
+    std::cout << "a * b = " << result << '\n'; // Output: a * b = -727379968 (overflowed value)
 }
 
 // Important DSA trap:
 // long long result = a * b;
-// If a and b are int, a * b starts as int arithmetic before reaching result.
+// If a and b are int, a * b starts as int arithmetic before reaching result and can overflow. 
 // Use 1LL * a * b when large multiplication is possible.
 
 //--------------------------------------------------------------------------------------------------
@@ -518,8 +522,15 @@ void naming_examples()
 //     int x = 20;
 // }
 
-// This is why lecture-note files often use small blocks or separate demo functions: examples stay
-// independent and repeated names do not collide.
+// Redeclaring in a new inner scope is allowed:
+// { 
+//   int x = 10; 
+//   {
+//       int x = 20; // This is allowed because it is a new inner scope
+//    }
+// }
+
+// This is why lecture-note files often use small blocks or separate demo functions: examples stay independent and repeated names do not collide.
 
 //--------------------------------------------------------------------------------------------------
 // 19. BASIC INPUT WITH DIFFERENT TYPES
@@ -572,18 +583,18 @@ void input_with_types()
 // 22. GOLDEN RULES
 
 // 1. Initialize variables whenever practical.
-// 2. Use int for ordinary whole numbers.
-// 3. Use long long when integer values or calculations can become very large.
-// 4. Prefer double over float for ordinary decimal calculations.
+// 2. Use 'int' for ordinary whole numbers.
+// 3. Use 'long long' when integer values or calculations can become very large.
+// 4. Prefer 'double' over 'float' for ordinary decimal calculations.
 // 5. Remember: 'A' is char, "A" is text/string.
-// 6. int / int performs integer division.
+// 6. 'int' / 'int' performs integer division.
 // 7. Make at least one operand floating-point when decimal division is needed.
 // 8. Cast before division, not after division.
-// 9. double -> int discards the fractional part.
-// 10. Prefer static_cast for intentional ordinary conversions.
-// 11. auto deduces a fixed compile-time type.
-// 12. const protects values that should not change.
-// 13. sizeof() reports sizes for your current implementation.
+// 9. 'double' -> 'int' discards the fractional part.
+// 10. Prefer 'static_cast' for intentional ordinary conversions.
+// 11. 'auto' deduces a fixed compile-time type.
+// 12. 'const' protects values that should not change.
+// 13. 'sizeof()' reports sizes for your current implementation.
 // 14. The destination type does not necessarily control expression evaluation.
 // 15. For large multiplication in DSA, remember: 1LL * a * b.
 // 16. Always ask: "In what type is this expression being calculated?"
@@ -609,7 +620,7 @@ void input_with_types()
 // explicit conversion -> programmer requests the conversion.
 // static_cast<T>(value) -> modern C++ syntax for many ordinary explicit conversions.
 // narrowing      -> conversion where information may be lost.
-// int / int      -> integer division.
+// 'int' / 'int'      -> integer division.
 // 1LL * a * b    -> useful pattern for large multiplication.
 
 //--------------------------------------------------------------------------------------------------

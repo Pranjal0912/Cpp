@@ -117,7 +117,7 @@ void input_example()
 
     std::cout << "\nEnter your age: ";
     std::cin >> age;
-    std::cout << "Your age is " << age << '\n';
+    std::cout << "Your age is " << age << '\n'; //-> Output: Your age is 22 (if user entered 22)
 }
 
 void multiple_inputs()
@@ -128,8 +128,8 @@ void multiple_inputs()
     std::cout << "\nEnter two numbers: ";
     std::cin >> firstNumber >> secondNumber;
 
-    std::cout << "You entered: " << firstNumber << " and " << secondNumber << '\n';
-    std::cout << "Their sum is: " << firstNumber + secondNumber << '\n';
+    std::cout << "You entered: " << firstNumber << " and " << secondNumber << '\n'; // -> Output: You entered: 10 and 20 (if user entered 10 and 20)
+    std::cout << "Their sum is: " << firstNumber + secondNumber << '\n';// -> Output: Their sum is: 30 
 }
 
 // Easy memory trick:
