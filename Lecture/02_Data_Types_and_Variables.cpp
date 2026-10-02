@@ -530,6 +530,21 @@ void naming_examples()
 //    }
 // }
 
+//  OUTER SCOPE
+//  ┌─────────────────────────────┐
+//  │ x = 10                      │
+//  │                             │
+//  │   INNER SCOPE               │
+//  │   ┌─────────────────────┐   │
+//  │   │ x = 20              │   │
+//  │   │                     │   │
+//  │   │ cout << x;          │   │
+//  │   │        ↑            │   │
+//  │   │   finds this x      │   │
+//  │   └─────────────────────┘   │
+//  │                             │
+//  └─────────────────────────────┘
+
 // This is why lecture-note files often use small blocks or separate demo functions: examples stay independent and repeated names do not collide.
 
 //--------------------------------------------------------------------------------------------------
@@ -537,7 +552,7 @@ void naming_examples()
 
 // std::cin reads according to the variable type.
 // int age; double height; std::cin >> age >> height;
-// Input 22 176.5 stores 22 in age and 176.5 in height.
+// Input 22.5 176.5 -> stores 22 in age and 176.5 in height.
 
 void input_with_types()
 {

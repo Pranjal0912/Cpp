@@ -8,7 +8,7 @@
 // Normally, C++ runs statements from top to bottom.
 // Conditional statements let us choose which code should run based on a condition.
 
-// Example idea:
+// Example:
 // if age >= 18 -> print "Adult"
 // otherwise    -> print "Minor"
 
@@ -588,7 +588,6 @@ void if_vs_switch_examples()
 void ternary_examples()
 {
     std::cout << "\nTERNARY OPERATOR\n";
-
     int age = 22;
     int a = 10;
     int b = 20;
@@ -613,6 +612,7 @@ void ternary_examples()
 // Inside range:  number >= low && number <= high
 // Outside range: number < low || number > high
 // Not equal:     value != expected
+
 
 void common_pattern_examples()
 {
